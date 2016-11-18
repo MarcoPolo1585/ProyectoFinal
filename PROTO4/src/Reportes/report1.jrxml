@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="74ea9723-c678-4707-b102-24a2c3a27e01">
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     dim_bu.`id_Bu` AS dim_bu_id_Bu,
+     dim_bu.`d_bu_host` AS dim_bu_d_bu_host,
+     fact_empleado.`id_Bu` AS fact_empleado_id_Bu,
+     fact_empleado.`id_area` AS fact_empleado_id_area,
+     fact_empleado.`id_departamento` AS fact_empleado_id_departamento,
+     fact_empleado.`id_puesto` AS fact_empleado_id_puesto,
+     fact_empleado.`id_tipo_empleado` AS fact_empleado_id_tipo_empleado,
+     fact_empleado.`id_tipo_contrato` AS fact_empleado_id_tipo_contrato,
+     fact_empleado.`id_num_empleado` AS fact_empleado_id_num_empleado,
+     fact_empleado.`d_nombre` AS fact_empleado_d_nombre,
+     fact_empleado.`id_tiempo` AS fact_empleado_id_tiempo,
+     fact_empleado.`d_apellido_paterno` AS fact_empleado_d_apellido_paterno,
+     fact_empleado.`d_apellido_materno` AS fact_empleado_d_apellido_materno,
+     fact_empleado.`d_sexo` AS fact_empleado_d_sexo,
+     fact_empleado.`d_edad` AS fact_empleado_d_edad,
+     fact_empleado.`d_antiguedad_años` AS fact_empleado_d_antiguedad_años,
+     fact_empleado.`d_1er_turno` AS fact_empleado_d_1er_turno,
+     fact_empleado.`d_2do_turno` AS fact_empleado_d_2do_turno,
+     fact_empleado.`d_3er_turno` AS fact_empleado_d_3er_turno,
+     fact_empleado.`d_t_turnos` AS fact_empleado_d_t_turnos,
+     fact_empleado.`d_salario_base` AS fact_empleado_d_salario_base,
+     fact_empleado.`m_activo` AS fact_empleado_m_activo,
+     fact_empleado.`d_fecha_baja` AS fact_empleado_d_fecha_baja,
+     fact_empleado.`d_costo_finiquito` AS fact_empleado_d_costo_finiquito,
+     fact_empleado.`d_indemnizacion` AS fact_empleado_d_indemnizacion,
+     fact_empleado.`d_prima_antiguedad` AS fact_empleado_d_prima_antiguedad,
+     fact_empleado.`d_gratificacion` AS fact_empleado_d_gratificacion,
+     fact_empleado.`d_t_pagado_separacion` AS fact_empleado_d_t_pagado_separacion,
+     fact_empleado.`d_motivo_baja` AS fact_empleado_d_motivo_baja,
+     fact_empleado.`d_volver_contratar` AS fact_empleado_d_volver_contratar,
+     fact_empleado.`d_pendiente` AS fact_empleado_d_pendiente,
+     fact_empleado.`d_fecha_nacimiento` AS fact_empleado_d_fecha_nacimiento,
+     fact_empleado.`d_fecha_antiguedad` AS fact_empleado_d_fecha_antiguedad,
+     fact_empleado.`q_activo` AS fact_empleado_q_activo,
+     fact_empleado.`q_edad` AS fact_empleado_q_edad,
+     fact_empleado.`q_antiguedad_años` AS fact_empleado_q_antiguedad_años
+FROM
+     `dim_bu` dim_bu,
+     `fact_empleado` fact_empleado]]>
+	</queryString>
+	<field name="dim_bu_id_Bu" class="java.lang.Integer"/>
+	<field name="dim_bu_d_bu_host" class="java.lang.String"/>
+	<field name="fact_empleado_id_Bu" class="java.lang.Integer"/>
+	<field name="fact_empleado_id_area" class="java.lang.Integer"/>
+	<field name="fact_empleado_id_departamento" class="java.lang.Integer"/>
+	<field name="fact_empleado_id_puesto" class="java.lang.Integer"/>
+	<field name="fact_empleado_id_tipo_empleado" class="java.lang.Integer"/>
+	<field name="fact_empleado_id_tipo_contrato" class="java.lang.Integer"/>
+	<field name="fact_empleado_id_num_empleado" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_nombre" class="java.lang.String"/>
+	<field name="fact_empleado_id_tiempo" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_apellido_paterno" class="java.lang.String"/>
+	<field name="fact_empleado_d_apellido_materno" class="java.lang.String"/>
+	<field name="fact_empleado_d_sexo" class="java.lang.String"/>
+	<field name="fact_empleado_d_edad" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_antiguedad_años" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_1er_turno" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_2do_turno" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_3er_turno" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_t_turnos" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_salario_base" class="java.lang.Double"/>
+	<field name="fact_empleado_m_activo" class="java.lang.Integer"/>
+	<field name="fact_empleado_d_fecha_baja" class="java.sql.Date"/>
+	<field name="fact_empleado_d_costo_finiquito" class="java.lang.String"/>
+	<field name="fact_empleado_d_indemnizacion" class="java.lang.String"/>
+	<field name="fact_empleado_d_prima_antiguedad" class="java.lang.String"/>
+	<field name="fact_empleado_d_gratificacion" class="java.lang.String"/>
+	<field name="fact_empleado_d_t_pagado_separacion" class="java.lang.String"/>
+	<field name="fact_empleado_d_motivo_baja" class="java.lang.String"/>
+	<field name="fact_empleado_d_volver_contratar" class="java.lang.String"/>
+	<field name="fact_empleado_d_pendiente" class="java.lang.String"/>
+	<field name="fact_empleado_d_fecha_nacimiento" class="java.sql.Date"/>
+	<field name="fact_empleado_d_fecha_antiguedad" class="java.sql.Date"/>
+	<field name="fact_empleado_q_activo" class="java.lang.Integer"/>
+	<field name="fact_empleado_q_edad" class="java.lang.Integer"/>
+	<field name="fact_empleado_q_antiguedad_años" class="java.lang.Integer"/>
+	<background>
+		<band height="575" splitType="Stretch">
+			<image vAlign="Bottom">
+				<reportElement mode="Opaque" x="0" y="234" width="85" height="241" backcolor="#000000" uuid="5a935c5a-cb9e-47f4-937f-4095f02b438e"/>
+				<imageExpression><![CDATA["silhouette2.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="-20" y="234" width="20" height="241" backcolor="#000000" uuid="b3c6908d-7d80-49ea-9208-729aeb57421b"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666" uuid="5cbea39c-2852-4912-9b2b-68d1ed00fabe"/>
+				<textField>
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="da9bb3cf-551e-4c7a-bfbc-be0e13166e7f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="e4838912-0b67-48d1-8c9b-f7bde9917eb6"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF" uuid="49da9db7-0377-45a5-9ddf-01948730e5ac"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="802" height="67" uuid="44404265-72b1-4885-ab37-d80eb92fa410"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[SILHOUETTE TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="232" y="67" width="568" height="37" uuid="db85ddbb-9b6e-4b6b-8bdf-8ee4f9227389"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Silhouette SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666" uuid="2845ee0f-bb9d-432a-98c9-0b8a13551cbe"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="19" height="15" uuid="e975ff82-83d6-49f1-9ac7-0f626df50b36"/>
+					<text><![CDATA[dim_bu_id_Bu]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="19" y="0" width="19" height="15" uuid="281ef0b0-37ad-4d4c-9b28-29cec539fcfb"/>
+					<text><![CDATA[dim_bu_d_bu_host]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="38" y="0" width="19" height="15" uuid="7ffc1b44-5632-494d-a68b-f1992a1cecf0"/>
+					<text><![CDATA[fact_empleado_id_Bu]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="57" y="0" width="19" height="15" uuid="1f37a3cf-29c8-4cd5-9e21-beeac94fca25"/>
+					<text><![CDATA[fact_empleado_id_area]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="76" y="0" width="19" height="15" uuid="cfdac1cd-eed2-447b-b180-643c9de7743b"/>
+					<text><![CDATA[fact_empleado_id_departamento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="95" y="0" width="19" height="15" uuid="14d31a22-2277-455b-986f-2a798cc28a6e"/>
+					<text><![CDATA[fact_empleado_id_puesto]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="114" y="0" width="19" height="15" uuid="c0dc490e-d45e-4925-96d6-7c9a33e9c124"/>
+					<text><![CDATA[fact_empleado_id_tipo_empleado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="133" y="0" width="19" height="15" uuid="6bfdf71c-9229-4cea-96fd-f7a2e8ba75e9"/>
+					<text><![CDATA[fact_empleado_id_tipo_contrato]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="152" y="0" width="19" height="15" uuid="1089ba12-c05a-4733-b049-749cf7025bc1"/>
+					<text><![CDATA[fact_empleado_id_num_empleado]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="171" y="0" width="19" height="15" uuid="20ab3df7-f0f5-4569-8b4a-aaa8d704d0c5"/>
+					<text><![CDATA[fact_empleado_d_nombre]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="190" y="0" width="19" height="15" uuid="c1e5f5d3-6a40-4db9-bbf6-0965f613a8bf"/>
+					<text><![CDATA[fact_empleado_id_tiempo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="209" y="0" width="19" height="15" uuid="aebed888-ab1e-4501-9f8d-d94b56c401fb"/>
+					<text><![CDATA[fact_empleado_d_apellido_paterno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="228" y="0" width="19" height="15" uuid="18dba098-8c4f-439f-9cbd-c7135c78e242"/>
+					<text><![CDATA[fact_empleado_d_apellido_materno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="247" y="0" width="19" height="15" uuid="fe980722-4fc5-4ef8-bf83-3727f996a26f"/>
+					<text><![CDATA[fact_empleado_d_sexo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="266" y="0" width="19" height="15" uuid="f65881f5-37c7-4629-a9e7-82ea7b5fa11d"/>
+					<text><![CDATA[fact_empleado_d_edad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="285" y="0" width="19" height="15" uuid="bd60f7b9-1e7b-4b1c-87cf-a226534a8022"/>
+					<text><![CDATA[fact_empleado_d_antiguedad_años]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="304" y="0" width="19" height="15" uuid="08feddbb-7dfe-4f91-88fe-5576d5bdca16"/>
+					<text><![CDATA[fact_empleado_d_1er_turno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="323" y="0" width="19" height="15" uuid="c672c9db-b5e1-411b-8a00-aaf9d47c8407"/>
+					<text><![CDATA[fact_empleado_d_2do_turno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="342" y="0" width="19" height="15" uuid="2a9dc0a6-f788-4354-8a09-2cd7c776b98e"/>
+					<text><![CDATA[fact_empleado_d_3er_turno]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="361" y="0" width="19" height="15" uuid="29bd76ca-17e3-42c9-ac5d-c3377c35c047"/>
+					<text><![CDATA[fact_empleado_d_t_turnos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="380" y="0" width="19" height="15" uuid="11edd2d9-2c13-4850-9d79-6de659922f76"/>
+					<text><![CDATA[fact_empleado_d_salario_base]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="399" y="0" width="19" height="15" uuid="39785233-2d02-4f22-89a5-5f868c714780"/>
+					<text><![CDATA[fact_empleado_m_activo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="418" y="0" width="19" height="15" uuid="d2207504-0878-4603-83c2-2685917d841f"/>
+					<text><![CDATA[fact_empleado_d_fecha_baja]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="437" y="0" width="19" height="15" uuid="70756a91-27d9-43b5-bcca-e43187da7b13"/>
+					<text><![CDATA[fact_empleado_d_costo_finiquito]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="456" y="0" width="19" height="15" uuid="66c6cf37-7b46-471f-ba25-e06eea42764a"/>
+					<text><![CDATA[fact_empleado_d_indemnizacion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="475" y="0" width="19" height="15" uuid="57c42739-3c94-40d1-b2a7-dadd6c85f5b1"/>
+					<text><![CDATA[fact_empleado_d_prima_antiguedad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="494" y="0" width="19" height="15" uuid="245c0c57-9ddb-4b00-a213-e61eb9365317"/>
+					<text><![CDATA[fact_empleado_d_gratificacion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="513" y="0" width="19" height="15" uuid="d29c9df5-0ec9-4d4f-a56a-9bffb656f296"/>
+					<text><![CDATA[fact_empleado_d_t_pagado_separacion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="532" y="0" width="19" height="15" uuid="b6e3d931-2d00-4735-8e02-81e5323a9d1c"/>
+					<text><![CDATA[fact_empleado_d_motivo_baja]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="551" y="0" width="19" height="15" uuid="253ef127-df72-48c8-ab78-a88cdd81d2c1"/>
+					<text><![CDATA[fact_empleado_d_volver_contratar]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="570" y="0" width="19" height="15" uuid="fcae1321-f60f-444d-8313-ec3a9ef5b389"/>
+					<text><![CDATA[fact_empleado_d_pendiente]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="589" y="0" width="19" height="15" uuid="7e336ab2-44bc-4d9c-bdb8-4813516d28fc"/>
+					<text><![CDATA[fact_empleado_d_fecha_nacimiento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="608" y="0" width="19" height="15" uuid="c84e1bc8-3e96-4cd2-a8d9-45e5196ef202"/>
+					<text><![CDATA[fact_empleado_d_fecha_antiguedad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="627" y="0" width="19" height="15" uuid="3048eb82-a63c-409e-ad9d-0c866e6a4d84"/>
+					<text><![CDATA[fact_empleado_q_activo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="646" y="0" width="19" height="15" uuid="bb58bddd-b4ae-4ff5-9be3-6b767db5af0e"/>
+					<text><![CDATA[fact_empleado_q_edad]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="665" y="0" width="19" height="15" uuid="9265e0d3-8f61-4739-a0f5-a6694fbb3802"/>
+					<text><![CDATA[fact_empleado_q_antiguedad_años]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement x="97" y="1" width="705" height="15" uuid="98e367d6-e34e-4997-9e84-b38d61cc4bba"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="19" height="15" uuid="a836a68a-2bb4-4aed-83c5-5c8c924f0126"/>
+					<textFieldExpression><![CDATA[$F{dim_bu_id_Bu}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="19" y="0" width="19" height="15" uuid="72604225-fec9-477f-b2c6-e4600636cc00"/>
+					<textFieldExpression><![CDATA[$F{dim_bu_d_bu_host}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="38" y="0" width="19" height="15" uuid="7f7ad123-3c8f-4163-bc67-50fd4e553adc"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_Bu}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="57" y="0" width="19" height="15" uuid="fcebbcb5-5042-48fc-b9a6-f7ba18cf1eb4"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_area}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="76" y="0" width="19" height="15" uuid="fb286681-4e6a-4a70-8153-90473b894781"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_departamento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="95" y="0" width="19" height="15" uuid="85f2f305-d702-4766-a252-85788152668c"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_puesto}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="114" y="0" width="19" height="15" uuid="e3509262-2cbf-4a91-8d19-8bb04b5b5601"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_tipo_empleado}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="133" y="0" width="19" height="15" uuid="096e2f19-ec19-42f0-aa84-6e036c62e74d"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_tipo_contrato}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="152" y="0" width="19" height="15" uuid="81e74cfa-7048-4976-962f-e99f6024920e"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_num_empleado}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="171" y="0" width="19" height="15" uuid="8f48145c-efb6-4b04-8172-b8cb0cde49bc"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_nombre}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="190" y="0" width="19" height="15" uuid="9ca17439-9b37-4f51-bb79-6fd4a6a9b1ed"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_id_tiempo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="209" y="0" width="19" height="15" uuid="61c73b0b-6c07-4b86-918b-6a1196398299"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_apellido_paterno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="228" y="0" width="19" height="15" uuid="861afd8d-eebc-4d67-95d9-e2633f6fb76d"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_apellido_materno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="247" y="0" width="19" height="15" uuid="9811d2cd-5e7f-4c4f-b3e5-8b7ddd4545c2"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_sexo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="266" y="0" width="19" height="15" uuid="90f11c14-0efb-4d14-8f41-d42386a12c0a"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_edad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="285" y="0" width="19" height="15" uuid="3beec691-f822-44bc-b130-ba400c7d8a8e"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_antiguedad_años}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="304" y="0" width="19" height="15" uuid="69ef74c6-0db9-4e9a-a75d-0bb74e2650c4"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_1er_turno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="323" y="0" width="19" height="15" uuid="91e92be4-20bc-44fb-bcec-68b9cd35af03"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_2do_turno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="342" y="0" width="19" height="15" uuid="034fe2d4-0dab-48b6-8605-f32e49c4a30e"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_3er_turno}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="361" y="0" width="19" height="15" uuid="525fe41d-aeef-430f-8916-bde8cf494292"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_t_turnos}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="380" y="0" width="19" height="15" uuid="d4c54d00-b07e-4c72-8754-4eaee591bf69"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_salario_base}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="399" y="0" width="19" height="15" uuid="1194488c-c4a5-4e28-b29e-064eddf35479"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_m_activo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="418" y="0" width="19" height="15" uuid="bd2a13e7-0f1a-47cb-a47a-99550048756a"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_fecha_baja}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="437" y="0" width="19" height="15" uuid="49f16b2f-9e76-4194-b268-0f87010957f6"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_costo_finiquito}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="456" y="0" width="19" height="15" uuid="7d9e0c5f-3303-4099-bb9e-0600c85dc0bc"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_indemnizacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="475" y="0" width="19" height="15" uuid="008eb537-9f10-4b9e-9dae-08332a1922f3"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_prima_antiguedad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="494" y="0" width="19" height="15" uuid="6741cccd-965c-43f1-85e4-76c7eedfb036"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_gratificacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="513" y="0" width="19" height="15" uuid="0bbf997e-2334-42fc-a0dc-ea31d5395d34"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_t_pagado_separacion}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="532" y="0" width="19" height="15" uuid="a9771e6d-e71c-4e3a-9f04-2e98256df625"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_motivo_baja}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="551" y="0" width="19" height="15" uuid="b6c3a826-3eab-4ab7-a610-dc7b752811da"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_volver_contratar}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="570" y="0" width="19" height="15" uuid="9d7a6058-34c3-4212-8c67-192c9a8ec9c0"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_pendiente}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="589" y="0" width="19" height="15" uuid="e1250b1d-961e-4e34-8efd-1b11ad3c3e63"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_fecha_nacimiento}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="608" y="0" width="19" height="15" uuid="816cd884-b342-4a59-b5aa-5c57b33477f5"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_d_fecha_antiguedad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="627" y="0" width="19" height="15" uuid="f8e08699-dabf-481c-a751-d8f9f09f10cb"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_q_activo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="646" y="0" width="19" height="15" uuid="a239cbb4-731a-4181-aec1-624e1355f975"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_q_edad}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="665" y="0" width="19" height="15" uuid="66d4b6eb-86b0-4ea3-9ddb-70ed5c7558a2"/>
+					<textFieldExpression><![CDATA[$F{fact_empleado_q_antiguedad_años}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="97" y="16" width="705" height="1" uuid="a31dacd6-2272-485f-80ba-cf08819254f0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000" uuid="ebbf8786-aeb0-4f01-81a0-31ef4784e5d4"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="96" y="0" width="267" height="20" uuid="7e366b01-9e90-4037-8403-e5a77cd79e93"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Silhouette Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

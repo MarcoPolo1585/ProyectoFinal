@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="56dc9f55-4fd3-43a2-bebf-e33893e49780">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     controladores_temp.`Num_Empleado` AS controladores_temp_Num_Empleado,
+     controladores_temp.`Nombre` AS controladores_temp_Nombre,
+     controladores_temp.`Apellido_Paterno` AS controladores_temp_Apellido_Paterno,
+     controladores_temp.`Apellido_Materno` AS controladores_temp_Apellido_Materno,
+     controladores_temp.`Puesto` AS controladores_temp_Puesto,
+     controladores_temp.`Sexo` AS controladores_temp_Sexo,
+     controladores_temp.`Fecha_Nacimiento` AS controladores_temp_Fecha_Nacimiento,
+     controladores_temp.`1er_Turno` AS controladores_temp_1er_Turno,
+     controladores_temp.`2do_Turno` AS controladores_temp_2do_Turno,
+     controladores_temp.`3er_Turno` AS controladores_temp_3er_Turno,
+     controladores_temp.`Total_Turnos` AS controladores_temp_Total_Turnos,
+     controladores_temp.`Fecha_Reporte` AS controladores_temp_Fecha_Reporte,
+     controladores_temp.`id_Puesto` AS controladores_temp_id_Puesto,
+     controladores_temp.`id_Tiempo` AS controladores_temp_id_Tiempo,
+     controladores_temp.`id_Tipo_empleado` AS controladores_temp_id_Tipo_empleado,
+     controladores_temp.`controladores_tempcol` AS controladores_temp_controladores_tempcol
+FROM
+     `controladores_temp` controladores_temp]]>
+	</queryString>
+	<field name="controladores_temp_Num_Empleado" class="java.lang.Integer"/>
+	<field name="controladores_temp_Nombre" class="java.lang.String"/>
+	<field name="controladores_temp_Apellido_Paterno" class="java.lang.String"/>
+	<field name="controladores_temp_Apellido_Materno" class="java.lang.String"/>
+	<field name="controladores_temp_1er_Turno" class="java.lang.Integer"/>
+	<field name="controladores_temp_2do_Turno" class="java.lang.Integer"/>
+	<field name="controladores_temp_3er_Turno" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="456" y="0" width="99" height="132" uuid="2414b2c1-6b42-4799-b180-ec9a78e5ce75"/>
+				<imageExpression><![CDATA["cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="ccacde01-8073-4854-95f6-d8f188173634"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="c0c7e9de-df22-4a74-8f5a-7d6833970ca6"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry Title]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="f630c586-7fbd-4bdf-9f75-ca98c9cecbc1"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry SubTitle]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#CC0000" uuid="9830ed01-615a-4fed-a7ad-74f2eb7e62d6"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="f80a3f9a-0d52-402a-bf5a-60b0ddc7cdc9"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="316" y="6" width="100" height="20" uuid="47d056d0-f0e2-41cf-9435-8a4074591ee4"/>
+				<text><![CDATA[Turno 2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="416" y="6" width="100" height="20" uuid="d3376fa6-7131-45b6-9e57-141ab375296c"/>
+				<text><![CDATA[Turno 3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="6" width="100" height="20" uuid="b92cd55d-a38d-4b35-b0d9-1ed36512d0fe"/>
+				<text><![CDATA[Turno 1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="116" y="6" width="100" height="20" uuid="a4064f67-a319-4656-9900-4203b33cf51f"/>
+				<text><![CDATA[Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="6" width="100" height="20" uuid="d1d4836e-102c-4f08-8500-b77898bf0c26"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="6" width="55" height="20" uuid="cd5dff7f-d0ea-4d75-ad8a-59a134ab6611"/>
+				<text><![CDATA[Folio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="216" y="0" width="100" height="20" uuid="d6d1dd41-dbb3-4b3e-a88a-a815969c0f31"/>
+				<textFieldExpression><![CDATA[$F{controladores_temp_1er_Turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="100" height="20" uuid="f0202c7c-6e80-4009-8a4e-0f28cfe4152f"/>
+				<textFieldExpression><![CDATA[$F{controladores_temp_2do_Turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="416" y="0" width="100" height="20" uuid="610ed638-9778-423b-b65d-f0621ed1fa6a"/>
+				<textFieldExpression><![CDATA[$F{controladores_temp_3er_Turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="116" y="0" width="100" height="20" uuid="be7e5a1f-db7c-4d33-b511-2957b1157bb6"/>
+				<textFieldExpression><![CDATA[$F{controladores_temp_Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="52" height="20" uuid="2a6f3898-45c2-4172-b395-b20ba6b4d70a"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="0" width="59" height="20" uuid="10bd1c9e-7ff7-4fc1-af95-fc2946d168ac"/>
+				<textFieldExpression><![CDATA[$F{controladores_temp_Num_Empleado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="00d23c28-967e-4860-8f20-20769b566a3f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="ca15b08e-0650-494a-a3df-9632875e96cd"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="7a2a7f01-9a83-4d64-9a6b-3edfcb3fc575"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="4ed4ed44-de36-41ce-b2b0-73b2e8dde6c6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="ae603768-9416-4998-9837-590b8fc21886"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

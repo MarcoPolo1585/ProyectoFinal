@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="028d990b-3c00-4983-a120-203f9d664506">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     sindicalizado_temp.`Num_Empleado` AS sindicalizado_temp_Num_Empleado,
+     sindicalizado_temp.`Nombre` AS sindicalizado_temp_Nombre,
+     sindicalizado_temp.`Apellido_Paterno` AS sindicalizado_temp_Apellido_Paterno,
+     sindicalizado_temp.`Apellido_Materno` AS sindicalizado_temp_Apellido_Materno,
+     sindicalizado_temp.`Puesto` AS sindicalizado_temp_Puesto,
+     sindicalizado_temp.`Sexo` AS sindicalizado_temp_Sexo,
+     sindicalizado_temp.`Fecha_Nacimiento` AS sindicalizado_temp_Fecha_Nacimiento,
+     count(sindicalizado_temp.`1er_Turno`) AS sindicalizado_temp_1er_Turno,
+     count(sindicalizado_temp.`2do_Turno`) AS sindicalizado_temp_2do_Turno,
+     count(sindicalizado_temp.`3er_Turno`) AS sindicalizado_temp_3er_Turno,
+     sindicalizado_temp.`Total_Turnos` AS sindicalizado_temp_Total_Turnos,
+     sindicalizado_temp.`Fecha_Reporte` AS sindicalizado_temp_Fecha_Reporte,
+     sindicalizado_temp.`id_Puesto` AS sindicalizado_temp_id_Puesto,
+     sindicalizado_temp.`id_Tiempo` AS sindicalizado_temp_id_Tiempo,
+     sindicalizado_temp.`id_Tipo_empleado` AS sindicalizado_temp_id_Tipo_empleado
+FROM
+     `sindicalizado_temp` sindicalizado_temp]]>
+	</queryString>
+	<field name="sindicalizado_temp_Sexo" class="java.lang.String"/>
+	<field name="sindicalizado_temp_1er_Turno" class="java.lang.Long"/>
+	<field name="sindicalizado_temp_2do_Turno" class="java.lang.Long"/>
+	<field name="sindicalizado_temp_3er_Turno" class="java.lang.Long"/>
+	<field name="sindicalizado_temp_Total_Turnos" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="164" height="126" uuid="4a3c6e40-fcf5-48e1-a72e-75019d47ec0e"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="170" y="0" width="263" height="62" uuid="45d0550b-5aba-4791-850e-f4124d9e0869"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="219" y="62" width="196" height="22" uuid="14936a11-855c-402c-ac82-595463cf5288"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="94" width="383" height="42" uuid="f0126967-881b-4da0-80b7-a7f091e1d7a1"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce auctor purus gravida arcu aliquam mattis. Donec et nulla libero, ut varius massa. Nulla sed turpis elit. Etiam aliquet mauris a ligula hendrerit in auctor leo lobortis.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="433" y="-115" width="267" height="209" uuid="1095089e-14c6-4344-b2d9-df5999953c08"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="3c1004ea-562b-4a82-b62a-413cfd2acf66"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="277" height="15" forecolor="#736343" uuid="8c2949bc-ce53-4617-9eb2-dc3f0d51ac40"/>
+				<text><![CDATA[sindicalizado_temp_Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="277" y="0" width="277" height="15" forecolor="#736343" uuid="f7ee51bd-f661-425a-bd8c-b9fa7e7f4d6e"/>
+				<text><![CDATA[sindicalizado_temp_Total_Turnos]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="164" y="0" width="100" height="20" uuid="fe08ab84-883e-414c-b16f-e82d0b1156a9"/>
+				<textFieldExpression><![CDATA[$F{sindicalizado_temp_1er_Turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="100" height="20" uuid="3f3ea9d5-2c08-4992-a431-95f093b13428"/>
+				<textFieldExpression><![CDATA[$F{sindicalizado_temp_2do_Turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="0" width="100" height="20" uuid="263e11e5-1a0e-4cb4-bdad-b5f7151e69ac"/>
+				<textFieldExpression><![CDATA[$F{sindicalizado_temp_3er_Turno}]]></textFieldExpression>
+			</textField>
+			<elementGroup>
+				<textField>
+					<reportElement x="1" y="0" width="100" height="20" uuid="fd8544f8-6f30-4113-bd90-e5a63fe99fc5"/>
+					<textFieldExpression><![CDATA[$F{sindicalizado_temp_Sexo}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+		<band height="50">
+			<textField>
+				<reportElement x="164" y="0" width="100" height="20" uuid="7051b8cd-9a12-4982-9f37-20d2a2f54804"/>
+				<textFieldExpression><![CDATA[$F{sindicalizado_temp_1er_Turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="297" y="0" width="100" height="20" uuid="01eead96-91f3-4e64-8c50-1ed9fd500783"/>
+				<textFieldExpression><![CDATA[$F{sindicalizado_temp_2do_Turno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="0" width="100" height="20" uuid="a851b6d5-52f4-4fd5-9b59-95afc15723b2"/>
+				<textFieldExpression><![CDATA[$F{sindicalizado_temp_3er_Turno}]]></textFieldExpression>
+			</textField>
+			<elementGroup>
+				<textField>
+					<reportElement x="1" y="0" width="100" height="20" uuid="6d66aff8-deb7-4941-8d76-277626300bd8">
+						<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$P{REPORT_DATA_SOURCE}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="8d0c96f1-2bf1-4760-8529-2d3abc1d7819"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="cc77766e-37ed-4776-99ef-686597a36585"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="f26ed789-42e9-481a-8970-1ddce8a3166c"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="8bcfa681-b7a5-4ada-8833-0ff2a48e8fc3"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="47efab43-8445-441f-9805-f5cb56f3348d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
